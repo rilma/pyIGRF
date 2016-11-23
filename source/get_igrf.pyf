@@ -1,0 +1,29 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module get_igrf ! in 
+    interface  ! in :get_igrf
+        subroutine get_igrf(xlat,xlon,height,year,dirdata,bnorth,beast,bdown,xl,icode) ! in :get_igrf:get_igrf.for
+            real intent(in) :: xlat
+            real intent(in) :: xlon
+            real intent(in) :: height
+            real intent(in) :: year
+            character*256 intent(in) :: dirdata
+            real intent(out) :: bnorth
+            real intent(out) :: beast
+            real intent(out) :: bdown
+            real intent(out) :: xl
+            integer intent(out) :: icode
+            real :: umr
+            real :: era
+            real :: aquad
+            real :: bquad
+            character*256 :: dirdata1
+            common /gener/ umr,era,aquad,bquad
+            common /folders/ dirdata1
+        end subroutine get_igrf
+    end interface 
+end python module get_igrf
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
