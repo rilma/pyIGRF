@@ -5,16 +5,17 @@ from os.path import join
 
 name = 'pyigrf'
 sourcePath = 'source'
-
+extra_compile_args = []
+extra_f77_compile_args = ['-w', '-fno-align-commons']
 ext = []
-for i in range(2):    
-    modName = 'igrf' if i == 0 else 'get_igrf'     
-    igrfSource = ['igrf_sub.pyf', 'igrf_sub.for'] if i == 0 else \
-        ['get_igrf.pyf', 'get_igrf.for', 'igrf_sub.for'] 
-    sources = []
-    for src in igrfSource: sources.append(join(sourcePath, src))
-    ext.append(Extension(name=modName, sources=sources, 
-        f2py_options=['--quiet'], extra_f77_compile_args=['-w']))
+
+modName = 'get_igrf'
+igrfSource = ['get_igrf.pyf', 'get_igrf.for', 'igrf_sub.for']
+sources = []
+for src in igrfSource: sources.append(join(sourcePath, src))
+ext.append(Extension(name=modName, sources=sources, 
+    f2py_options=['--quiet'], extra_compile_args=extra_compile_args, 
+    extra_f77_compile_args=extra_f77_compile_args))
 
 igrfData = glob(join('data', '*.dat'))
 igrfDataFiles = [(join(name, 'data'), igrfData)]

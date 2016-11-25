@@ -1,43 +1,4 @@
 
-      program batch_get_igrf
-
-      real xlat,xlon,year,height
-      integer icode
-!      real dimo
-!      real xl,dip,dec
-!      common /GENER/ UMR,ERA,AQUAD,BQUAD
-
-      real bnorth,beast,bdown,xl !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-      xlat = -11.95
-      xlon = 283.13
-      year = 2004.75
-      height = 0.
-
-!      call initize
-!      call feldcof(year,dimo)     
-!      call feldg(xlat,xlon,height,bnorth,beast,bdown,babs)
-!      call shellg(xlat,xlon,height,dimo,xl,icode,bab1)
-
-!      dip = asin(bdown / babs) / UMR
-!      dec = asin(beast / sqrt(bnorth**2 + beast**2)) / UMR
-!      hcomp = sqrt(bnorth**2 + beast**2)
-
-!      write(*,*) dimo
-!      write(*,*) bnorth,beast,bdown,babs
-!      write(*,*) xl,icode,bab1,dip,dec
-!      write(*,*) hcomp
-
-      call get_igrf(xlat,xlon,height,year,bnorth,beast,bdown !!!!!!!!!!!!!!!!!!!
-     . ,xl,icode)
-
-      write(*,*) bnorth,beast,bdown   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      write(*,*) xl,icode  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-      end
-
-
-
       subroutine get_igrf(xlat,xlon,height,year,dirdata,bnorth,beast
      . ,bdown,xl,icode)
 
@@ -80,4 +41,3 @@ Cf2py intent(out) bnorth,beast,bdown,xl,icode
       call shellg(xlat,xlon,height,dimo,xl,icode,bab1)
 
       end
-
