@@ -1,0 +1,8 @@
+.gitignore
+*~
+*.txt
+*.so
+build/
+source/data
+bilcal/
+tmp/
