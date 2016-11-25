@@ -1,6 +1,9 @@
 !    -*- f90 -*-
 ! Note: the context of this file is case sensitive.
 
+! f2py igrf_sub.for -m igrf -h igrf_sub.pyf
+! f2py -c igrf_sub.pyf igrf_sub.for
+
 python module igrf ! in 
     interface  ! in :igrf
         subroutine igrf_sub(xlat,xlong,year,height,dirdata,xl,icode,dip,dec) ! in :igrf:igrf_sub.for
