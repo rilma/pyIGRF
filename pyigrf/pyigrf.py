@@ -1,5 +1,4 @@
 
-
 from os.path import dirname, join, realpath
 from os import sep
 from .get_igrf import get_igrf
