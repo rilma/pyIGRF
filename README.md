@@ -1,6 +1,6 @@
 # IGRF Model App
 
-This is an unofficial repository of a Python wrapper to the [IGRF model] (http://omniweb.gsfc.nasa.gov/vitmo/igrf_vitmo.html).
+This is an unofficial repository of a Python wrapper to the [IGRF model](http://omniweb.gsfc.nasa.gov/vitmo/igrf_vitmo.html).
 
 ### Installing
 
@@ -10,7 +10,7 @@ This is an unofficial repository of a Python wrapper to the [IGRF model] (http:/
 
 ## Running the test
 
-Run [example 1] (https://github.com/rilma/pyIGRF/blob/master/scripts/example1.py) as follows to obtain an single-value data:
+Run [example 1](https://github.com/rilma/pyIGRF/blob/master/scripts/example1.py) as follows to obtain an single-value data:
 
 ```
 > python example1.py 
