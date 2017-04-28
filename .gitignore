@@ -1,8 +1,8 @@
-.gitignore
 *~
 *.txt
-*.so
+*.egg-info
 build/
 source/data
 bilcal/
 tmp/
+venv35/
