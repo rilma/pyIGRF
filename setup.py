@@ -1,3 +1,16 @@
+''' setup.py '''
+
+# Verify the latest pip version
+from os import system
+system('pip install --upgrade pip')
+
+# install required packages from PyPI
+from pip import main as pip_main
+pip_req = ['matplotlib', 'numpy', 'pandas', 'seaborn', 'scipy']
+pip_main(['install'] + pip_req)
+
+# set "develop" option
+import setuptools
 
 from glob import glob
 from numpy.distutils.core import Extension, setup
@@ -23,7 +36,7 @@ igrfDataFiles = [(join(name, 'data'), igrfData)]
 
 if __name__ == '__main__':
 
-    setup(name=name, version='0.0.2', author='Ronald Ilma', 
+    setup(name=name, version='1.0.0', author='Ronald Ilma', 
         author_email='rri5@cornell.edu', description='IGRF model',
         packages=[name], ext_package=name, ext_modules=ext,
         data_files=igrfDataFiles)
